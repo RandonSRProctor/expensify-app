@@ -1,18 +1,21 @@
 # Overview
 
-**Indescision App** is a basic React App that randomly chooses an item from multiple, user provided items.
+**Expensify App** is a React app that allows each unique user to store and manipulate financial transactions.
 
-A simple solution to helping those who are stuck with decision anxiety.
+This application is created by **Randy Proctor** following lessons by **Andrew Mead**.
 
-This is the first practice app in a series that **Randy Proctor** is creating from lessons created by **Andrew Mead**.
+# Notable Tech
+
+- React
+- Redux
+- Customized Webpack (Not create-react-app)
+- Babel
+- SCSS/CSS3
 
 # Important Note on Outdated Practices
 
-This application likely features outdated syntax expressions from pre-ES6 JS, and I have left them outdated intentionally.
+This application was created using pre-v16 React standards.
 
-Part of the lesson path is to practice older and new standards so that I can: 
-- Understand *why* the new standards are so important
-- Be more prepared to optimize legacy code
-- Have a deeper understanding of how code changes over time
+During production I have the intention of using older syntax as I learn how to use React from the ground up.
 
-If you would like to further discuss optimization, standards, or code-practices in general, please feel free to email me.  I always love talking shop!
+I also am using Webpack with customized loader settings rather than using create-react-app.
