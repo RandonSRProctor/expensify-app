@@ -1,5 +1,6 @@
 import { createStore } from 'redux'
 
+// ACTION GENERATORS
 
 const incrementCount = ({ incrementBy = 1 } = {}) => ({
         type: 'INCREMENT',
@@ -20,7 +21,10 @@ const resetCount = () => ({
     type: 'RESET'
 })
 
-const store = createStore((state = { count:0 }, action) => {
+
+// REDUCERS
+
+const countReducer = (state = { count:0 }, action) => {
     switch (action.type) {
         case 'INCREMENT' :
             return {
@@ -41,11 +45,18 @@ const store = createStore((state = { count:0 }, action) => {
         default:
             return state
     }
-})
+}
+
+const store = createStore(countReducer)
+
+
+// SUBSCRIPTION
 
 const unsubscribe = store.subscribe(() => {
     console.log(store.getState())
 })
+
+// CALLS TO ACTION GENERATORS
 
 store.dispatch(incrementCount({ incrementBy: 5}))
 
