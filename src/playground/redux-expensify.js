@@ -21,9 +21,13 @@ const addExpense = (
     }
 })
 
-
-
 // REMOVE_EXPENSE
+
+const removeExpense = ( {id} ) => ({
+    type: 'REMOVE_EXPENSE',
+    id
+})
+
 // EDIT_EXPENSE
 
 // SET_TEXT_FILTER
@@ -39,7 +43,14 @@ const expensesReducerDefaultState = []
 const expensesReducer = (state = expensesReducerDefaultState , action) => {
     switch (action.type) {
         case 'ADD_EXPENSE':
-            return state.concat(action.expense)
+            return [
+                ...state,
+                action.expense
+            ]
+        case 'REMOVE_EXPENSE':
+            return [
+                state.filter( (expense) => expense.id !== action.id )
+            ]
         default:
             return state
     }
@@ -74,7 +85,10 @@ store.subscribe(() => {
     console.log(store.getState())
 })
 
-store.dispatch(addExpense({ description: 'Rent', amount: 100 }))
+const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 100 }))
+const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 300 }))
+
+store.dispatch(removeExpense({ id: expenseOne.expense.id })) // BAMMO!
 
 const demoState = {
     expenses: [{
