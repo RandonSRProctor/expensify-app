@@ -193,6 +193,7 @@ store.dispatch(sortByAmount())
 
 
 // DRAFT OF STATE
+// NOT USED IN CODE
 
 const demoState = {
     expenses: [{
