@@ -19,7 +19,6 @@ const AppRouter = (props) => (
                 <Route path="/help" component={HelpPage} />
                 <Route component={NotFoundPage} />
             </Switch>
-            <p>{props.visibleExpenses}</p>
         </div>
     </BrowserRouter>
 )
