@@ -12,13 +12,11 @@ import { setTextFilter, setStartDate, setEndDate, sortByAmount, sortByDate } fro
 
 const store = configureStore()
 
-store.dispatch(addExpense({ description: 'Water Bill', note: 'April', amount: 10750, createdAt: 4062021 }))
-store.dispatch(addExpense({ description: 'Gas Bill', note: 'April', amount: 3000, createdAt: 4062021 }))
-store.dispatch(setTextFilter('water'))
+store.dispatch(addExpense({ description: 'Water Bill', amount: 4500 }))
+store.dispatch(addExpense({ description: 'Gas Bill', createdAt: 1000 }))
+store.dispatch(addExpense({ description: 'Rent', amount: 109500}))
 
-setTimeout(() => {
-    store.dispatch(setTextFilter('bill'))
-}, 3000)
+
 
 const state = store.getState()
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters)
